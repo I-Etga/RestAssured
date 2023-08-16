@@ -2,10 +2,13 @@ package com.cydeo.day03;
 
 import com.cydeo.utilities.HrTestBase;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static io.restassured.RestAssured.*;
@@ -49,6 +52,25 @@ public class P04_HrWithResponsePath extends HrTestBase {
         for (Integer id : allRegionsIDs) {
             assertEquals(2, id);
             System.out.println("id = " + id);
+        }
+
+        //'rel's inside the items !!
+        ArrayList<List<String>> allRels = response.path("items.links.rel");
+        System.out.println(allRels);
+        for (List<String> eachRel : allRels) {
+            for (String each : eachRel) {
+                System.out.println(each);
+                assertEquals("self", each);
+            }
+        }
+
+        JsonPath jsonPath = response.jsonPath();
+
+        //'rel's outside the items !!
+        ArrayList<String> allRelsOutItems = response.path("links.rel");
+        System.out.println(allRelsOutItems);
+        for (String eachRel : allRelsOutItems) {
+            System.out.println(eachRel);
         }
     }
 }
