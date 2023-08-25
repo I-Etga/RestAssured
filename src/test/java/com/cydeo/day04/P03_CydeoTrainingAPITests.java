@@ -31,7 +31,7 @@ public class P03_CydeoTrainingAPITests extends CydeoTestBase {
                 zipCode 33222
     */
 
-    @DisplayName("")
+    @DisplayName("GET students/2")
     @Test
     void test1() {
 

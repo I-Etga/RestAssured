@@ -3,7 +3,7 @@ package com.cydeo.utilities;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
 
-public class ErgastTestBase {
+public abstract class ErgastTestBase {
 
     @BeforeAll
     public static void init() {
