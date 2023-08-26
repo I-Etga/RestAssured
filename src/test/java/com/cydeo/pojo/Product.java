@@ -5,10 +5,16 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(value = "id", allowSetters = true)
-public class Spartan {
+public class Product {
+    /*
+      {
+            "id": 17,
+            "name": "Pineapple-Slice",
+            "self_link": "/shop/v2/products/17"
+        },
+     */
+
     private int id;
     private String name;
-    private String gender;
-    private long phone;
-
+    private String self_link;
 }

@@ -175,5 +175,6 @@ public class ErgastTask extends ErgastTestBase {
         ConstructorPJ constructorPJ6 = jsonPath.getObject("MRData.ConstructorTable.Constructors[5]", ConstructorPJ.class);
         System.out.println("constructor6.getConstructorId() = " + constructorPJ6.getConstructorId());
         System.out.println("constructor6.getName() = " + constructorPJ6.getName());
+
     }
 }
